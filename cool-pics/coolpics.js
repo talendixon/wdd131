@@ -1,4 +1,3 @@
-// Viewer template function
 function viewerTemplate(imagePath, altText) {
   return `
     <div class="viewer">
@@ -12,16 +11,28 @@ function viewerTemplate(imagePath, altText) {
 function viewHandler(event) {
   if (event.target.tagName === 'IMG') {
     const clickedImage = event.target;
-    const imageParts = clickedImage.src.split('-');
-    const fullImagePath = `${imageParts[0]}-full.jpeg`;
+    // Get the current image src
+    const currentSrc = clickedImage.src;
     
+    // Replace '-sm.jpeg' with '-full.jpeg' in the image path
+    const fullImagePath = currentSrc.replace('-sm.jpeg', '-full.jpeg');
+    
+    // Create and insert the viewer
     document.body.insertAdjacentHTML(
       'afterbegin', 
       viewerTemplate(fullImagePath, clickedImage.alt)
     );
     
+    // Add close button listener
     document.querySelector('.close-viewer')
       .addEventListener('click', closeViewer);
+      
+    // Add click outside to close
+    document.querySelector('.viewer').addEventListener('click', function(e) {
+      if (e.target.classList.contains('viewer')) {
+        closeViewer();
+      }
+    });
   }
 }
 
