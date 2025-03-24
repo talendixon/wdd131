@@ -1,0 +1,108 @@
+/* Color Palette */
+:root {
+    --gold: #EFC69B;
+    --red: #AF1B3F;
+    --dark: #473144;
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--dark);
+}
+
+h1, h2 {
+    font-family: Lora, Impact, serif;
+}
+
+/* Skip to Content Link */
+.skiptocontent a {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--red);
+    color: white;
+    padding: 10px;
+    z-index: 100;
+}
+
+.skiptocontent a:focus {
+    top: 0;
+}
+
+/* Header Styling */
+header {
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 2px solid var(--dark);
+    border-top: 2px solid var(--dark);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+nav ul {
+    display: grid;
+    grid-template-columns: 80px 80px 80px;
+    justify-content: end;
+    justify-items: end;
+    list-style: none;
+    gap: 20px;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--dark);
+    font-size: 1.1rem;
+}
+
+/* Main Content Layout */
+main {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Articles Grid */
+.articles {
+    display: grid;
+    gap: 20px;
+}
+
+article {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    border: 1px solid var(--gold);
+    padding: 15px;
+}
+
+.book-details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.book-content img {
+    max-width: 200px;
+    height: auto;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: var(--gold);
+}
