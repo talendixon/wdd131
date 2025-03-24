@@ -1,10 +1,3 @@
-/* Color Palette */
-:root {
-    --gold: #EFC69B;
-    --red: #AF1B3F;
-    --dark: #473144;
-}
-
 /* Reset and Base Styles */
 * {
     margin: 0;
@@ -13,13 +6,106 @@
 }
 
 body {
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: Arial, sans-serif;
     line-height: 1.6;
-    color: var(--dark);
+    color: #333;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-h1, h2 {
-    font-family: Lora, Impact, serif;
+/* Header Styling */
+header {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    text-align: left;
+    padding: 10px 0;
+    font-size: 2rem;
+}
+
+nav {
+    text-align: right;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+}
+
+/* Main Content Layout */
+main {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 20px;
+}
+
+/* Articles Styling */
+.articles {
+    display: grid;
+    gap: 30px;
+}
+
+article {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 20px;
+}
+
+.book-details {
+    text-align: right;
+}
+
+.book-details time {
+    display: block;
+    color: #666;
+}
+
+.book-details .age-range,
+.book-details .genre {
+    color: #666;
+}
+
+.book-details .rating {
+    color: red;
+    letter-spacing: 2px;
+}
+
+.book-content h2 {
+    color: #af1b3f;
+    margin-bottom: 10px;
+}
+
+.book-content img {
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.book-content a {
+    color: #af1b3f;
+    text-decoration: none;
+}
+
+.filters {
+    border-left: 1px solid #ccc;
+    padding-left: 20px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+    margin-top: 20px;
 }
 
 /* Skip to Content Link */
@@ -27,7 +113,7 @@ h1, h2 {
     position: absolute;
     top: -40px;
     left: 0;
-    background: var(--red);
+    background: #af1b3f;
     color: white;
     padding: 10px;
     z-index: 100;
@@ -35,74 +121,4 @@ h1, h2 {
 
 .skiptocontent a:focus {
     top: 0;
-}
-
-/* Header Styling */
-header {
-    text-align: center;
-    padding: 20px 0;
-    border-bottom: 2px solid var(--dark);
-    border-top: 2px solid var(--dark);
-}
-
-header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 15px;
-}
-
-nav ul {
-    display: grid;
-    grid-template-columns: 80px 80px 80px;
-    justify-content: end;
-    justify-items: end;
-    list-style: none;
-    gap: 20px;
-    max-width: 300px;
-    margin: 0 auto;
-}
-
-nav a {
-    text-decoration: none;
-    color: var(--dark);
-    font-size: 1.1rem;
-}
-
-/* Main Content Layout */
-main {
-    display: grid;
-    grid-template-columns: 3fr 1fr;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-/* Articles Grid */
-.articles {
-    display: grid;
-    gap: 20px;
-}
-
-article {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    border: 1px solid var(--gold);
-    padding: 15px;
-}
-
-.book-details {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.book-content img {
-    max-width: 200px;
-    height: auto;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 10px;
-    background-color: var(--gold);
 }
