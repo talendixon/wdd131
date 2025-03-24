@@ -46,3 +46,31 @@ img {
 footer {
     margin-top: 40px;
 }
+/* Light theme (default) */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header h2 {
+    color: #006EB6; /* Accessible blue from BYUI branding guide */
+}
+
+/* Dark theme styles */
+body.dark {
+    background-color: #333;
+    color: white;
+}
+
+body.dark header h2 {
+    color: #0093FF; /* A lighter blue with better contrast on dark background */
+}
+
+/* Theme selector styling */
+#theme-selector {
+    margin-bottom: 20px;
+    padding: 5px;
+}
