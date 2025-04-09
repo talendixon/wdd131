@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Logger - SkillTracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans&family=Roboto+Mono&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo.jpg" alt="SkillTracker Logo">
+                <h1>SkillTracker</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="practice.html" class="active">Practice Logger</a></li>
+                    <li><a href="#" id="login-btn">Login</a></li>
+                    <li><a href="#" id="register-btn" class="btn-primary">Register</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h3>My Skills</h3>
+            <ul id="skill-list">
+                <!-- Skills will be populated by JavaScript -->
+            </ul>
+            <button id="add-skill-btn" class="btn-secondary">+ Add New Skill</button>
+        </aside>
+
+        <main class="dashboard-content">
+            <!-- Overview Metrics -->
+            <section class="metrics-overview">
+                <div class="metric-card">
+                    <h3>Total Practice Time</h3>
+                    <p id="total-time" class="metric-value">0 hrs</p>
+                </div>
+                <div class="metric-card">
+                    <h3>Current Streak</h3>
+                    <p id="current-streak" class="metric-value">0 days</p>
+                </div>
+                <div class="metric-card">
+                    <h3>Skills Tracked</h3>
+                    <p id="skills-count" class="metric-value">0</p>
+                </div>
+                <div class="metric-card">
+                    <h3>Goal Progress</h3>
+                    <div id="goal-progress" class="progress-bar">
+                        <div class="progress" style="width: 0%"></div>
+                    </div>
+                    <p id="goal-percentage">0%</p>
+                </div>
+            </section>
+
+            <!-- Practice Timer -->
+            <section class="practice-timer">
+                <h2>Practice Timer</h2>
+                <div class="timer-display" id="timer-display">00:00:00</div>
+                <div class="timer-controls">
+                    <button id="start-timer" class="btn-primary">Start</button>
+                    <button id="pause-timer" class="btn-secondary" disabled>Pause</button>
+                    <button id="stop-timer" class="btn-tertiary" disabled>Stop & Log</button>
+                </div>
+                <div id="current-skill-select" class="current-skill-select">
+                    <label for="timer-skill">Skill:</label>
+                    <select id="timer-skill">
+                        <!-- Options will be populated by JavaScript -->
+                    </select>
+                </div>
+            </section>
+
+            <!-- Progress Charts -->
+            <section class="progress-charts">
+                <h2>Your Progress</h2>
+                <div class="chart-container">
+                    <canvas id="progress-chart"></canvas>
+                </div>
+            </section>
+
+            <!-- Practice Logger Form -->
+            <section class="practice-logger">
+                <h2>Log Practice Session</h2>
+                <form id="practice-form">
+                    <div class="form-group">
+                        <label for="skill-select">Skill</label>
+                        <select id="skill-select" required>
+                            <!-- Options will be populated by JavaScript -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="duration">Duration (minutes)</label>
+                        <input type="number" id="duration" min="1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="difficulty">Difficulty Level (1-5)</label>
+                        <input type="range" id="difficulty" min="1" max="5" step="1" value="3">
+                        <div class="range-labels">
+                            <span>Easy</span>
+                            <span>Hard</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="notes">Session Notes</label>
+                        <textarea id="notes" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="tags">Tags (comma separated)</label>
+                        <input type="text" id="tags" placeholder="e.g., focus, morning, productive">
+                    </div>
+                    <button type="submit" class="btn-primary">Log Session</button>
+                </form>
+            </section>
+
+            <!-- Practice History -->
+            <section class="practice-history">
+                <h2>Recent Practice History</h2>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Skill</th>
+                                <th>Duration</th>
+                                <th>Difficulty</th>
+                                <th>Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody id="history-table">
+                            <!-- History will be populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Recommendations -->
+            <section class="recommendations">
+                <h2>Personalized Recommendations</h2>
+                <div id="recommendations-container">
+                    <!-- Recommendations will be populated by JavaScript -->
+                    <p>Log some practice sessions to receive personalized recommendations.</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/logo.jpg" alt="SkillTracker Logo">
+                    <h3>SkillTracker</h3>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="practice.html">Practice Logger</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 SkillTracker - WDD 131 Personal Project</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

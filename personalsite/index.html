@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillTracker - Track, Analyze, Improve</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans&family=Roboto+Mono&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo.jpg" alt="SkillTracker Logo">
+                <h1>SkillTracker</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="practice.html">Practice Logger</a></li>
+                    <li><a href="#" id="login-btn">Login</a></li>
+                    <li><a href="#" id="register-btn" class="btn-primary">Register</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h2>Track, Analyze, Improve</h2>
+                    <h3>The smarter way to develop any skill</h3>
+                    <p>SkillTracker helps you build consistency in your learning journey by making your progress visible and actionable. Log your practice, set achievable goals, and watch your skills grow with data-driven insights.</p>
+                    <a href="practice.html" class="btn-primary">Start Tracking Now</a>
+                </div>
+                <div class="hero-image">
+                    <img src="images/hero-image.jpg" alt="Person tracking skills on a device">
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="container">
+                <h2>Features</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="chart-icon"></i>
+                        </div>
+                        <h3>Visualize Your Progress</h3>
+                        <p>Track your practice time and skill development with intuitive charts and progress indicators. See your improvement over days, weeks, and months to stay motivated.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="goal-icon"></i>
+                        </div>
+                        <h3>Set Smart Goals</h3>
+                        <p>Create custom goals based on your schedule and skill level. Our system helps you break down large objectives into achievable daily tasks.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="insight-icon"></i>
+                        </div>
+                        <h3>Get Personalized Insights</h3>
+                        <p>Receive custom recommendations based on your practice patterns and progress. Learn when you practice best and how to optimize your learning.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Start Guide -->
+        <section class="quick-start">
+            <div class="container">
+                <h2>How It Works</h2>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>Create Your Skills</h3>
+                        <p>Define the skills you want to track, whether it's coding, language learning, or playing an instrument.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>Log Your Practice</h3>
+                        <p>Record your practice sessions, including time spent, difficulty, and notes about your progress.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3>Review & Adapt</h3>
+                        <p>Analyze your progress data and adjust your practice routine based on recommendations.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials">
+            <div class="container">
+                <h2>What Our Users Say</h2>
+                <div class="testimonial-carousel" id="testimonial-carousel">
+                    <!-- Testimonials will be inserted here by JavaScript -->
+                </div>
+                <div class="carousel-controls">
+                    <button id="prev-testimonial" aria-label="Previous testimonial"><span>&lt;</span></button>
+                    <button id="next-testimonial" aria-label="Next testimonial"><span>&gt;</span></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta">
+            <div class="container">
+                <h2>Ready to Master Your Skills?</h2>
+                <p>Join thousands of learners who have improved their skills with SkillTracker.</p>
+                <a href="practice.html" class="btn-primary">Get Started Now</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/logo.jpg" alt="SkillTracker Logo">
+                    <h3>SkillTracker</h3>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="practice.html">Practice Logger</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 SkillTracker - WDD 131 Personal Project</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
