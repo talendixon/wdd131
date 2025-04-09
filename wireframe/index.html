@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillTracker Wireframe Generator</title>
+    <link rel="stylesheet" href="wireframe.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>SkillTracker Wireframe Generator</h1>
+        <p>Create simple wireframes for your skill tracking application</p>
+    </header>
+
+    <main>
+        <section class="controls">
+            <h2>Wireframe Controls</h2>
+            <div class="control-panel">
+                <div class="control-group">
+                    <h3>Page Type</h3>
+                    <select id="page-selector">
+                        <option value="home">Home Page</option>
+                        <option value="practice">Practice Logger</option>
+                        <option value="analytics">Analytics Dashboard</option>
+                        <option value="goals">Goal Setting</option>
+                    </select>
+                </div>
+                
+                <div class="control-group">
+                    <h3>Screen Size</h3>
+                    <select id="screen-size">
+                        <option value="desktop">Desktop (1200px)</option>
+                        <option value="tablet">Tablet (768px)</option>
+                        <option value="mobile">Mobile (375px)</option>
+                    </select>
+                </div>
+
+                <div class="control-group">
+                    <h3>Elements</h3>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" id="show-header" checked> Navigation Bar</label>
+                        <label><input type="checkbox" id="show-sidebar" checked> Sidebar</label>
+                        <label><input type="checkbox" id="show-footer" checked> Footer</label>
+                    </div>
+                </div>
+
+                <button id="generate-btn" class="primary-btn">Generate Wireframe</button>
+                <button id="download-btn" class="secondary-btn">Download as PNG</button>
+            </div>
+        </section>
+
+        <section class="wireframe-container">
+            <h2>Wireframe Preview</h2>
+            <div class="device-frame">
+                <div id="wireframe-output" class="wireframe">
+                    <!-- Wireframe will be generated here -->
+                    <div class="wireframe-header">
+                        <div class="logo-placeholder"></div>
+                        <div class="nav-placeholder">
+                            <div class="nav-item"></div>
+                            <div class="nav-item"></div>
+                            <div class="nav-item"></div>
+                        </div>
+                        <div class="auth-placeholder">
+                            <div class="btn-placeholder"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="wireframe-content">
+                        <div class="wireframe-sidebar">
+                            <div class="sidebar-item"></div>
+                            <div class="sidebar-item"></div>
+                            <div class="sidebar-item"></div>
+                            <div class="sidebar-item"></div>
+                        </div>
+                        
+                        <div class="wireframe-main">
+                            <div class="hero-section">
+                                <div class="headline-placeholder"></div>
+                                <div class="subheading-placeholder"></div>
+                                <div class="text-placeholder"></div>
+                                <div class="btn-placeholder"></div>
+                            </div>
+                            
+                            <div class="features-section">
+                                <div class="section-title"></div>
+                                <div class="features-grid">
+                                    <div class="feature-box">
+                                        <div class="icon-placeholder"></div>
+                                        <div class="feature-title"></div>
+                                        <div class="text-placeholder"></div>
+                                    </div>
+                                    <div class="feature-box">
+                                        <div class="icon-placeholder"></div>
+                                        <div class="feature-title"></div>
+                                        <div class="text-placeholder"></div>
+                                    </div>
+                                    <div class="feature-box">
+                                        <div class="icon-placeholder"></div>
+                                        <div class="feature-title"></div>
+                                        <div class="text-placeholder"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="wireframe-footer">
+                        <div class="footer-section"></div>
+                        <div class="footer-section"></div>
+                        <div class="copyright"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="templates">
+            <h2>Wireframe Templates</h2>
+            <div class="template-grid">
+                <div class="template-card">
+                    <h3>Home Page</h3>
+                    <div class="template-preview home-preview"></div>
+                    <p>Features hero section, feature overview, and testimonials</p>
+                    <button class="template-btn" data-template="home">Use Template</button>
+                </div>
+                
+                <div class="template-card">
+                    <h3>Practice Logger</h3>
+                    <div class="template-preview practice-preview"></div>
+                    <p>Includes form inputs, progress charts, and history</p>
+                    <button class="template-btn" data-template="practice">Use Template</button>
+                </div>
+                
+                <div class="template-card">
+                    <h3>Analytics Dashboard</h3>
+                    <div class="template-preview analytics-preview"></div>
+                    <p>Shows charts, statistics, and insights panel</p>
+                    <button class="template-btn" data-template="analytics">Use Template</button>
+                </div>
+                
+                <div class="template-card">
+                    <h3>Goal Setting</h3>
+                    <div class="template-preview goals-preview"></div>
+                    <p>Contains goal forms, progress trackers, and milestones</p>
+                    <button class="template-btn" data-template="goals">Use Template</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Created as a companion tool for the SkillTracker Site Plan</p>
+        <p>&copy; 2025 SkillTracker - WDD 131 Personal Project</p>
+    </footer>
+
+    <script>
+        // This would be expanded in a real application
+        document.getElementById('generate-btn').addEventListener('click', function() {
+            const pageType = document.getElementById('page-selector').value;
+            const screenSize = document.getElementById('screen-size').value;
+            
+            // Update wireframe based on selection
+            const wireframe = document.getElementById('wireframe-output');
+            
+            // Reset classes
+            wireframe.className = 'wireframe';
+            
+            // Add selected classes
+            wireframe.classList.add(pageType);
+            wireframe.classList.add(screenSize);
+            
+            // Handle checkbox toggles
+            const showHeader = document.getElementById('show-header').checked;
+            const showSidebar = document.getElementById('show-sidebar').checked;
+            const showFooter = document.getElementById('show-footer').checked;
+            
+            const header = document.querySelector('.wireframe-header');
+            const sidebar = document.querySelector('.wireframe-sidebar');
+            const footer = document.querySelector('.wireframe-footer');
+            
+            header.style.display = showHeader ? 'flex' : 'none';
+            sidebar.style.display = showSidebar ? 'flex' : 'none';
+            footer.style.display = showFooter ? 'flex' : 'none';
+
+            // For this demo, we'll just update some classes - real implementation would generate content
+            console.log(`Generated ${pageType} wireframe for ${screenSize}`);
+        });
+
+        // Template buttons
+        document.querySelectorAll('.template-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const template = this.getAttribute('data-template');
+                document.getElementById('page-selector').value = template;
+                document.getElementById('generate-btn').click();
+            });
+        });
+    </script>
+</body>
+</html>

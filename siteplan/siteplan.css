@@ -1,0 +1,213 @@
+/* Site Plan CSS - SkillTracker */
+
+/* Global Styles */
+:root {
+    --primary-color: #3A86FF;    /* Bright Blue */
+    --secondary-color: #FF006E;  /* Vibrant Pink */
+    --accent-color: #FFBE0B;     /* Golden Yellow */
+    --background-color: #F8F9FA; /* Light Gray */
+    --text-color: #212529;       /* Dark Gray */
+    
+    --heading-font: 'Montserrat', sans-serif;
+    --body-font: 'Open Sans', sans-serif;
+    --accent-font: 'Roboto Mono', monospace;
+    
+    --border-radius: 8px;
+    --box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--body-font);
+    color: var(--text-color);
+    background-color: var(--background-color);
+    line-height: 1.6;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--heading-font);
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+h1 {
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.8rem;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+    margin-top: 2rem;
+}
+
+h3 {
+    font-size: 1.4rem;
+    color: var(--secondary-color);
+    margin-top: 1.5rem;
+}
+
+h4 {
+    font-size: 1.2rem;
+    margin-top: 1.2rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+ul, ol {
+    margin-left: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    margin: 1rem 0;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+/* Header and Footer */
+header, footer {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+header h1, header h2 {
+    color: white;
+    border-bottom: none;
+    margin: 0.5rem 0;
+}
+
+footer {
+    margin-top: 3rem;
+    margin-bottom: 0;
+}
+
+/* Sections */
+section {
+    background-color: white;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+/* Colors Section */
+.color-palette {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.color-sample {
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    color: white;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.color-sample p {
+    margin: 0.3rem 0;
+}
+
+.primary {
+    background-color: var(--primary-color);
+}
+
+.secondary {
+    background-color: var(--secondary-color);
+}
+
+.accent {
+    background-color: var(--accent-color);
+    color: var(--text-color);
+}
+
+.background {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    border: 1px solid #ddd;
+}
+
+.text {
+    background-color: var(--text-color);
+}
+
+/* Typography Section */
+.font-samples {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 1.5rem 0;
+}
+
+.font-sample {
+    padding: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+}
+
+.heading-example {
+    font-family: var(--heading-font);
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.body-example {
+    font-family: var(--body-font);
+    font-size: 1rem;
+}
+
+.accent-example {
+    font-family: var(--accent-font);
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+}
+
+/* Wireframe Section */
+.wireframe-description {
+    margin: 1.5rem 0;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    .color-palette, .font-samples {
+        grid-template-columns: 1fr;
+    }
+    
+    section {
+        padding: 1.5rem;
+    }
+}

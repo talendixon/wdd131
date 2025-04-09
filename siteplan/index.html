@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillTracker Site Plan</title>
+    <link rel="stylesheet" href="siteplan.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans&family=Roboto+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>SkillTracker Site Plan</h1>
+        <h2>WDD 131 Personal Project</h2>
+    </header>
+
+    <main>
+        <section class="site-name">
+            <h2>Site Name</h2>
+            <p>SkillTracker</p>
+        </section>
+
+        <section class="purpose">
+            <h2>Purpose</h2>
+            <p>SkillTracker is designed to help users track their progress in developing new skills. The application allows users to log practice sessions, set goals, visualize progress over time, and receive customized recommendations based on their learning patterns. Its purpose is to motivate consistent practice and provide data-driven insights for more effective skill development.</p>
+        </section>
+
+        <section class="audience">
+            <h2>Audience</h2>
+            <p>The target audience includes adult learners (18-45) who are self-motivated to develop new skills outside of formal education settings. This includes professionals looking to expand their capabilities, hobbyists tracking their creative pursuits, and individuals learning new languages or instruments. The audience is moderately tech-savvy and values organization and data visualization to support their learning journey.</p>
+        </section>
+
+        <section class="dynamic-elements">
+            <h2>Dynamic Elements</h2>
+            <p>JavaScript will be used to create the following dynamic elements:</p>
+
+            <h3>1. Interactive Skill Tracker Dashboard</h3>
+            <ul>
+                <li>Skill progress visualization using chart.js</li>
+                <li>DOM manipulation to update progress bars and statistics in real-time</li>
+                <li>Event listeners for form submissions when logging practice sessions</li>
+            </ul>
+
+            <h3>2. Goal Setting and Achievement System</h3>
+            <ul>
+                <li>Object-oriented approach to store and track user goals</li>
+                <li>Conditional branching to deliver different messages based on goal completion status</li>
+                <li>Local storage utilization to persist user data between sessions</li>
+            </ul>
+
+            <h3>3. Practice Timer with Analytics</h3>
+            <ul>
+                <li>Array methods (map, filter, reduce) to analyze practice session data</li>
+                <li>ES Modules to separate timer functionality from data processing</li>
+                <li>DOM interaction to start/pause/stop timer and display results</li>
+            </ul>
+
+            <h3>4. Recommendation Engine</h3>
+            <ul>
+                <li>Array filtering to identify practice patterns</li>
+                <li>Conditional logic to generate personalized recommendations</li>
+                <li>DOM manipulation to display contextual suggestions</li>
+            </ul>
+        </section>
+
+        <section class="logo">
+            <h2>Logo</h2>
+            <img src="images/logo.jpg" alt="SkillTracker Logo">
+        </section>
+
+        <section class="colors">
+            <h2>Color Scheme</h2>
+            <div class="color-palette">
+                <div class="color-sample primary">
+                    <p>Primary: #3A86FF</p>
+                    <p>Bright Blue - Represents progress and positivity</p>
+                </div>
+                <div class="color-sample secondary">
+                    <p>Secondary: #FF006E</p>
+                    <p>Vibrant Pink - Creates contrast and highlights important elements</p>
+                </div>
+                <div class="color-sample accent">
+                    <p>Accent: #FFBE0B</p>
+                    <p>Golden Yellow - Used for achievements and milestones</p>
+                </div>
+                <div class="color-sample background">
+                    <p>Background: #F8F9FA</p>
+                    <p>Light Gray - Provides a clean, distraction-free interface</p>
+                </div>
+                <div class="color-sample text">
+                    <p>Text: #212529</p>
+                    <p>Dark Gray - Ensures readability on light backgrounds</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="typography">
+            <h2>Typography</h2>
+            <div class="font-samples">
+                <div class="font-sample heading-font">
+                    <h3>Headings: 'Montserrat', sans-serif</h3>
+                    <p class="heading-example">This is an example of the heading font</p>
+                    <p>Bold, modern, and highly readable</p>
+                </div>
+                <div class="font-sample body-font">
+                    <h3>Body: 'Open Sans', sans-serif</h3>
+                    <p class="body-example">This is an example of the body font used for most text content in the site.</p>
+                    <p>Clean, neutral, and excellent for screen readability</p>
+                </div>
+                <div class="font-sample accent-font">
+                    <h3>Accent Text: 'Roboto Mono', monospace</h3>
+                    <p class="accent-example">00:45:22 - Timer Example</p>
+                    <p>Used for timers and metrics to create a technical feel</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content">
+            <h2>Content</h2>
+            
+            <h3>Home Page Content</h3>
+            
+            <h4>Hero Section</h4>
+            <p><strong>Title:</strong> Track, Analyze, Improve</p>
+            <p><strong>Subtitle:</strong> The smarter way to develop any skill</p>
+            <p><strong>Paragraph:</strong> SkillTracker helps you build consistency in your learning journey by making your progress visible and actionable. Log your practice, set achievable goals, and watch your skills grow with data-driven insights.</p>
+            <p><strong>Call to Action:</strong> Start Tracking Now</p>
+            
+            <h4>Features Section</h4>
+            <p><strong>Feature 1: Visualize Your Progress</strong><br>
+            Track your practice time and skill development with intuitive charts and progress indicators. See your improvement over days, weeks, and months to stay motivated.</p>
+            
+            <p><strong>Feature 2: Set Smart Goals</strong><br>
+            Create custom goals based on your schedule and skill level. Our system helps you break down large objectives into achievable daily tasks.</p>
+            
+            <p><strong>Feature 3: Get Personalized Insights</strong><br>
+            Receive custom recommendations based on your practice patterns and progress. Learn when you practice best and how to optimize your learning.</p>
+            
+            <h4>Testimonials Section</h4>
+            <p>(Placeholder for user testimonials)</p>
+            
+            <h3>Practice Logger Page Content</h3>
+            
+            <h4>Practice Session Form</h4>
+            <p>Fields for:</p>
+            <ul>
+                <li>Skill being practiced</li>
+                <li>Duration of practice</li>
+                <li>Difficulty level (1-5)</li>
+                <li>Notes about the session</li>
+                <li>Tags for categorization</li>
+            </ul>
+            
+            <h4>Practice History</h4>
+            <p>Tabular data showing:</p>
+            <ul>
+                <li>Date</li>
+                <li>Skill</li>
+                <li>Duration</li>
+                <li>Cumulative time</li>
+                <li>Progress indicators</li>
+            </ul>
+            
+            <h4>Analytics Panel</h4>
+            <ul>
+                <li>Weekly practice time summary</li>
+                <li>Consistency streak</li>
+                <li>Comparative analysis against goals</li>
+                <li>Improvement trends</li>
+            </ul>
+        </section>
+
+        <section class="wireframes">
+            <h2>Wireframes</h2>
+            
+            <h3>Home Page Wireframe</h3>
+            <img src="images/wireframe.png" alt="Home Page Wireframe">
+            
+            <div class="wireframe-description">
+                <p>The home page features:</p>
+                <ul>
+                    <li>Navigation bar with logo, main sections, and login/register</li>
+                    <li>Hero section with main value proposition and call-to-action</li>
+                    <li>Features overview with icons and descriptions</li>
+                    <li>Quick start guide with step-by-step instructions</li>
+                    <li>Testimonial carousel</li>
+                    <li>Footer with links and copyright information</li>
+                </ul>
+            </div>
+            
+            <h3>Practice Logger Page Wireframe</h3>
+            <img src="images/logger.png" alt="Practice Logger Wireframe">
+            
+            <div class="wireframe-description">
+                <p>The practice logger page includes:</p>
+                <ul>
+                    <li>Navigation bar consistent with home page</li>
+                    <li>Sidebar with quick access to different skills being tracked</li>
+                    <li>Main content area with practice logging form</li>
+                    <li>Interactive charts showing progress</li>
+                    <li>Recent history section</li>
+                    <li>Recommendations panel</li>
+                    <li>Settings for customizing tracking preferences</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 SkillTracker - WDD 131 Personal Project</p>
+    </footer>
+</body>
+</html>
