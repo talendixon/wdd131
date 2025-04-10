@@ -1,4 +1,6 @@
-// ✅ Sample Recipe Data
+// ====================================
+// ✅ Sample recipe data
+// ====================================
 const recipes = [
   {
     id: 1,
@@ -6,9 +8,7 @@ const recipes = [
     category: "dessert",
     image: "apple-crisp.webp",
     rating: 4,
-    description: "This apple crisp recipe is a simple yet delicious fall dessert that's great served warm with vanilla ice cream.",
-    tags: ["Dessert", "Fruit"],
-    ingredients: ["apples", "oats", "brown sugar"]
+    description: "This apple crisp recipe is a simple yet delicious fall dessert that's great served warm with vanilla ice cream."
   },
   {
     id: 2,
@@ -16,9 +16,7 @@ const recipes = [
     category: "main dish",
     image: "stir-fry.jpg",
     rating: 3,
-    description: "A quick and healthy vegetable stir fry that's perfect for busy weeknights.",
-    tags: ["Healthy", "Vegan"],
-    ingredients: ["broccoli", "carrots", "bell pepper"]
+    description: "A quick and healthy vegetable stir fry that's perfect for busy weeknights."
   },
   {
     id: 3,
@@ -26,9 +24,7 @@ const recipes = [
     category: "main dish",
     image: "cheeseburger.jpg",
     rating: 5,
-    description: "The ultimate classic cheeseburger with all the fixings.",
-    tags: ["Beef", "Grill"],
-    ingredients: ["beef", "cheddar", "bun"]
+    description: "The ultimate classic cheeseburger with all the fixings."
   },
   {
     id: 4,
@@ -36,96 +32,83 @@ const recipes = [
     category: "salad",
     image: "caesar-salad.jpg",
     rating: 4,
-    description: "A classic Caesar salad with homemade dressing and croutons.",
-    tags: ["Salad", "Greens"],
-    ingredients: ["romaine", "parmesan", "croutons"]
+    description: "A classic Caesar salad with homemade dressing and croutons."
   }
 ];
 
-// ✅ 02 - Random Helpers
-function getRandomNumber(max) {
-  return Math.floor(Math.random() * max);
-}
-
-function getRandomListEntry(list) {
-  return list[getRandomNumber(list.length)];
-}
-
-// ✅ 03 - Template Functions
-function tagsTemplate(tags) {
-  return tags.map(tag => `<li>${tag}</li>`).join('');
-}
-
-function ratingTemplate(rating) {
-  let html = `<span class="rating" role="img" aria-label="Rating: ${rating} out of 5 stars">`;
+// ====================================
+// ✅ Function to generate star ratings
+// ====================================
+function generateRatingStars(rating) {
+  let starsHTML = `<span class="rating" role="img" aria-label="Rating: ${rating} out of 5 stars">`;
   for (let i = 1; i <= 5; i++) {
-    html += i <= rating
+    starsHTML += i <= rating
       ? `<span aria-hidden="true" class="icon-star">⭐</span>`
       : `<span aria-hidden="true" class="icon-star-empty">☆</span>`;
   }
-  html += '</span>';
-  return html;
+  starsHTML += '</span>';
+  return starsHTML;
 }
 
-function recipeTemplate(recipe) {
-  return `
-    <article class="recipe-card">
-      <img src="images/${recipe.image}" alt="${recipe.title}">
-      <div class="recipe-content">
-        <ul class="recipe__tags">${tagsTemplate(recipe.tags)}</ul>
-        <h2 class="recipe-title">${recipe.title}</h2>
-        ${ratingTemplate(recipe.rating)}
-        <p class="recipe-description">${recipe.description}</p>
-      </div>
-    </article>
-  `;
-}
-
-// ✅ 04 - Render Random Recipe
+// ====================================
+// ✅ Function to render recipes
+// ====================================
 function renderRecipes(recipeList) {
-  const container = document.querySelector('.recipe-container');
-  if (!container) return;
+  const recipeContainer = document.querySelector('.recipe-container');
+  recipeContainer.innerHTML = '';
 
-  container.innerHTML = recipeList.length
-    ? recipeList.map(recipeTemplate).join('')
-    : '<p>No recipes found matching your search.</p>';
-}
-
-function init() {
-  const randomRecipe = getRandomListEntry(recipes);
-  renderRecipes([randomRecipe]);
-}
-
-// ✅ 05 - Filter Recipes by Search
-function filterRecipes(query) {
-  query = query.toLowerCase();
-
-  return recipes.filter(recipe =>
-    recipe.title.toLowerCase().includes(query) ||
-    recipe.description.toLowerCase().includes(query) ||
-    recipe.tags.find(tag => tag.toLowerCase().includes(query)) ||
-    recipe.ingredients.find(ingredient => ingredient.toLowerCase().includes(query))
-  ).sort((a, b) => a.title.localeCompare(b.title));
-}
-
-function searchHandler(event) {
-  event.preventDefault();
-  const searchInput = document.querySelector('.search-form input').value.trim().toLowerCase();
-
-  if (searchInput === '') {
-    renderRecipes(recipes); // Show all if empty
+  if (recipeList.length === 0) {
+    recipeContainer.innerHTML = '<p>No recipes found matching your search.</p>';
     return;
   }
 
-  const filtered = filterRecipes(searchInput);
-  renderRecipes(filtered);
+  recipeList.forEach(recipe => {
+    const recipeCard = document.createElement('article');
+    recipeCard.classList.add('recipe-card');
+
+    recipeCard.innerHTML = `
+      <img src="images/${recipe.image}" alt="${recipe.title}">
+      <div class="recipe-content">
+        <span class="category">${recipe.category}</span>
+        <h2 class="recipe-title">${recipe.title}</h2>
+        ${generateRatingStars(recipe.rating)}
+        <p class="recipe-description">${recipe.description}</p>
+      </div>
+    `;
+
+    recipeContainer.appendChild(recipeCard);
+  });
 }
 
-// ✅ Load Everything When Page Loads
-document.addEventListener('DOMContentLoaded', () => {
-  init(); // Show a random recipe initially
-  const searchForm = document.querySelector('.search-form');
-  if (searchForm) {
-    searchForm.addEventListener('submit', searchHandler);
+// ====================================
+// ✅ Search form handler
+// ====================================
+function handleSearch(event) {
+  event.preventDefault();
+  const searchInput = document.querySelector('.search-form input').value.toLowerCase().trim();
+
+  if (searchInput === '') {
+    renderRecipes(recipes);
+    return;
   }
+
+  const filteredRecipes = recipes.filter(recipe => {
+    return (
+      recipe.title.toLowerCase().includes(searchInput) ||
+      recipe.category.toLowerCase().includes(searchInput) ||
+      recipe.description.toLowerCase().includes(searchInput)
+    );
+  });
+
+  renderRecipes(filteredRecipes);
+}
+
+// ====================================
+// ✅ Init page on load
+// ====================================
+document.addEventListener('DOMContentLoaded', () => {
+  renderRecipes(recipes);
+
+  const searchForm = document.querySelector('.search-form');
+  searchForm.addEventListener('submit', handleSearch);
 });
